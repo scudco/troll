@@ -1,17 +1,17 @@
 require 'spec_helper'
 require 'trolby'
 
-describe Trolby::Troller do
+describe Troll::Troller do
   describe "#troll" do
     it "stores the troll result" do
-      t = Trolby::Troller.new("spec/fixtures/xzibit.rb")
+      t = Troll::Troller.new("spec/fixtures/xzibit.rb")
       t.troll
       t.result.should eql(File.read("spec/fixtures/xzibit_trolled.rb"))
     end
   end
 
   describe "#troll!" do
-    let(:troller) { Trolby::Troller.new("spec/fixtures/xzibit.rb") }
+    let(:troller) { Troll::Troller.new("spec/fixtures/xzibit.rb") }
     before do
       troller.stub(:output_file).and_return("spec/fixtures/xzibit_trolled_output.rb")
     end
@@ -31,11 +31,11 @@ describe Trolby::Troller do
 
   describe "#troll_string" do
     it "appends a semicolon to a single-line string" do
-      Trolby::Troller.new.troll_string("foo").should eql("foo;")
+      Troll::Troller.new.troll_string("foo").should eql("foo;")
     end
 
     it "does not append a semicolon to a single-line string ending in a semi-colon" do
-      Trolby::Troller.new.troll_string("foo;").should eql("foo;")
+      Troll::Troller.new.troll_string("foo;").should eql("foo;")
     end
 
     it "appends a semicolon to each line of a multi-line string" do
@@ -57,7 +57,7 @@ describe Trolby::Troller do
 
         end;
       EOS
-      Trolby::Troller.new.troll_string(multi_line_string).should eql(semi_coloned_multi_line_string)
+      Troll::Troller.new.troll_string(multi_line_string).should eql(semi_coloned_multi_line_string)
     end
   end
 end
