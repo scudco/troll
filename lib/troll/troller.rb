@@ -4,11 +4,15 @@ module Troll
 
     def initialize(file_path=nil)
       self.file = file_path
+      @trolls = [SemiColonTroll.new]
     end
 
     def troll
       contents = File.read(self.file)
-      self.result = troll_string(contents)
+      @trolls.each do |troll|
+        contents = troll.troll_string(contents)
+      end
+      self.result = contents
     end
 
     def troll!
@@ -16,26 +20,7 @@ module Troll
       write_file
     end
 
-    def troll_string(str)
-      result = ""
-      str.each_line { |line| result += troll_line(line) }
-      result
-    end
-
     private
-    def troll_line(line)
-      case line
-      when /^\s+$/
-        line
-      when /^.*;\s*$/
-        line
-      when /^.*\n$/
-        "#{line.chomp};\n"
-      else
-        "#{line};"
-      end
-    end
-
     def write_file
       File.open(output_file, 'w') do |f|
         f.puts self.result
