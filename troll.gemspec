@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version = Troll::VERSION
   s.authors = ["scudco"]
   s.email = "adamandersonis@gmail.com"
-  s.files = Dir["lib/**/*"]
+  s.files = Dir["README.md", "lib/**/*"]
   s.homepage = "http://github.com/scudco/troll"
   s.require_path = "lib"
   s.rubyforge_project = "troll"
