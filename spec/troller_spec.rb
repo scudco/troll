@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'trolby'
+require 'troll'
 
 describe Troll::Troller do
   describe "#troll" do

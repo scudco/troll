@@ -1,4 +1,4 @@
-require 'trolby'
+require 'troll'
 
 describe Troll::Collector do
   context "project path" do

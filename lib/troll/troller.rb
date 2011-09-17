@@ -1,4 +1,4 @@
-module Trolby
+module Troll
   class Troller
     attr_accessor :file, :result
 
