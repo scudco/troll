@@ -4,7 +4,7 @@ module Troll
 
     def initialize(file_path=nil)
       self.file = file_path
-      @trolls = [SemiColonTroll.new]
+      @trolls = [SemiColonTroll.new, TabTroll.new]
     end
 
     def troll
