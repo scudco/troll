@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'troll'
+
+Troll::Collector.new(ARGV.first).files.each do |file|
+  Troll::Troller.new(file).troll!
+end
