@@ -11,6 +11,10 @@ describe Troll::SemiColonTroll do
       Troll::SemiColonTroll.new.troll_string("foo;").should eql("foo;")
     end
 
+    it "does not append a semicolon to a single-line string ending in a comma" do
+      Troll::SemiColonTroll.new.troll_string("foo,").should eql("foo,")
+    end
+
     it "appends a semicolon to each line of a multi-line string" do
       multi_line_string = <<-EOS
         class Xzibit

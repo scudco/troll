@@ -11,7 +11,7 @@ module Troll
       case line
       when /^\s+$/
         line
-      when /^.*;\s*$/
+      when /^.*[;,]\s*$/
         line
       when /^.*\n$/
         "#{line.chomp};\n"
