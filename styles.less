@@ -1,0 +1,60 @@
+@import 'reset.less';
+@import 'grid.less';
+
+body {
+  font-size: 16px;
+  font-family: "Comic Sans", "Comic Sans MS", cursive;
+  background: white url(trollface.png) no-repeat bottom;
+}
+
+h1,h2,h3,h4,h5,h6 { font-weight: bold; margin-bottom: 0.5em; }
+h1 { font-size: 2.2em;   }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; text-transform: uppercase; }
+
+.content {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+section.intro {
+  .column(7);
+}
+
+section.usage {
+  .column(5);
+  .install {
+    color: magenta;
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+ul {
+  background-color: #222;
+  padding: 10px;
+  padding-left: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 2px dashed white;
+  list-style: square outside none;
+  ul {
+    list-style: disc outside none;
+    ul {
+      list-style: circle outside none;
+    }
+  }
+
+  li:nth-child(7n+1) { color: red; }
+  li:nth-child(7n+2) { color: orange; }
+  li:nth-child(7n+3) { color: yellow; }
+  li:nth-child(7n+4) { color: green; }
+  li:nth-child(7n+5) { color: blue; }
+  li:nth-child(7n+6) { color: indigo; }
+  li:nth-child(7n+7) { color: violet; }
+}
